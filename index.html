@@ -10,7 +10,7 @@
 <body>
 <nav>
   <ul class="nav">
-    <li class="none"><a href="/viewmusic">View Music</span></a></li>
+    <li class="none"><a href="/viewmusic">List Music</span></a></li>
     <li class="border"><a href="/addmusic">Add Music</a></li>
     <li class="border"><a href="/profile">Profile</a></li>
   </ul>
@@ -20,55 +20,53 @@
 <!-- blue box -->
 <section class="select">
   <!-- slider, artist select, album select, genre checkboxes, filter button -->
-  <p>Song length:</p>
+  <h3>Song length:</h3>
   <input type="range">
-  <p>Artist:</p>
+  <h3>Artist:</h3>
   <select>
     <option>Adele</option>
     <option>Gwen Stefani</option>
     <option>Nicki Minaj</option>
+    <option>The Avett Brothers</option>    
+    <option>Jason Isbell</option>
   </select>
-  <p>Album:</p>
+  <h3>Album:</h3>
   <select>
     <option>25</option>
     <option>Used to Love You</option>
     <option>The Pinkprint</option>
+    <option>Emotionalism</option>
+    <option>Southeastern</option>
   </select>
   <p>
-<!-- PUT ME IN A TABLE -->
-  <p>Genre:</p>
-  <table>
-    <tr>
-    <td><input type="checkbox">Rock</td>
-    <td><input type="checkbox">Classical</td>
-    </tr>
-    <tr>
-    <td><input type="checkbox">Pop</td>
-    <td><input type="checkbox">Jazz</td>
-    </tr>
-    <tr>
-    <td><input type="checkbox">Blues</td>
-    <td><input type="checkbox">Hip hop</td>
-    </tr>
-  </table>
-
-  <p class="button"><input type="button" name="filter" value="Filter"></p>
-</p>
+<!-- have to use table to align correctly? -->
+<div class="genre">
+  <h3>Genre:</h3>
+  <p><input type="checkbox">Rock</input></p>
+  <p><input type="checkbox">Classical</input></p>
+  <p><input type="checkbox">Pop</input></p>
+  <p><input type="checkbox">Jazz</input></p>
+  <p><input type="checkbox">Blues</input></p>
+  <p><input type="checkbox">Hip hop</input></p>
+  <button>Filter</button>
+</div>
 </section>
 
 <!-- yellow box -->
 <section class="songs">
   <!-- song name h1, artist/album/genre underneath -->
-  <h1>Song Name</h1>
-    <p>Artist name | Album name | Genre</p>
-  <h1>Song Name</h1>
-    <p>Artist name | Album name | Genre</p>
-  <h1>Song Name</h1>
-    <p>Artist name | Album name | Genre</p>
-  <h1>Song Name</h1>
-    <p>Artist name | Album name | Genre</p>
+  <h1>"When We Were Young"</h1>
+    <p>Adele | 25 | Pop</p>
+  <h1>"Used to Love You"</h1>
+    <p>Gwen Stefani | Used to Love You | Pop</p>
+  <h1>"Anaconda"</h1>
+    <p>Nicki Minaj | The Pinkprint | Hip hop</p>
+  <h1>"Paranoia in B Major"</h1>
+    <p>The Avett Brothers | Emotionalism | Rock</p>
+  <h1>"Stockholm"</h1>
+    <p>Jason Isbell | Southeastern | Rock</p>
 </section>
 
-
+<script type="text/javascript" src="songs.js"></script>
 </body>
 </html>
