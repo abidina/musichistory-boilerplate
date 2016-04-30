@@ -18,8 +18,24 @@ var newSongs = [];
     songs = songs.replace("*e", "e");
     songs = songs.replace("!", "").split(',');
 
-for (var i = 0; i < songs.length; i++) {
-  var string = "";
-  var string = "<p>" + songs[i] + "</p>";
-  songElement.innerHTML += string;
-};
+$("#addMusicView").hide();
+$("#addClick").click(function() {
+  $("#listMusicView").hide();
+  $("#addMusicView").show();
+});
+
+$("#listClick").click(function() {
+  $("#addMusicView").hide();
+  $("#listMusicView").show();
+});
+
+$("#addMusicBtn").click(function(){
+  var userSong = $("#userSongName").val() + " on the album " + $("#userAlbumName").val() + " by " + $("#userArtistName").val();
+  songs.unshift(userSong);
+  for (var i = 0; i < songs.length; i++) {
+    var string = "";
+    var string = "<p>" + songs[i] + "</p>";
+    songElement.innerHTML += string;
+  };
+});
+

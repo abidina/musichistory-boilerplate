@@ -10,12 +10,23 @@
 <body>
 <nav>
   <ul class="nav">
-    <li class="none"><a href="/viewmusic">List Music</span></a></li>
-    <li class="border"><a href="/addmusic">Add Music</a></li>
+    <li class="none" id="listClick"><a href="#">List Music</a></li>
+    <li class="border" id="addClick"><a href="#">Add Music</a></li>
     <li class="border"><a href="/profile">Profile</a></li>
   </ul>
 </nav>
 
+<!-- ADD MUSIC VIEW -->
+<section class="inputSection" id="addMusicView">
+<p>Song: <input type="text" id="userSongName" class="userInput"></input></p>
+<p>Artist: <input type="text" id="userArtistName" class="userInput"></input></p>
+<p>Album: <input type="text" id="userAlbumName" class="userInput"></input></p>
+<button label="add" id="addMusicBtn">Add</button>
+</section>
+
+
+<!-- LIST MUSIC VIEW -->
+<section id="listMusicView">
 
 <!-- blue box -->
 <section class="select">
@@ -38,7 +49,7 @@
     <option>Emotionalism</option>
     <option>Southeastern</option>
   </select>
-  <p>
+  <p></p>
 <!-- have to use table to align correctly? -->
 <div class="genre">
   <h3>Genre:</h3>
@@ -66,7 +77,9 @@
   <h1>"Stockholm"</h1>
     <p>Jason Isbell | Southeastern | Rock</p>
 </section>
+</section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script type="text/javascript" src="songs.js"></script>
 </body>
 </html>
