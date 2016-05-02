@@ -39,3 +39,24 @@ $("#addMusicBtn").click(function(){
   };
 });
 
+function populateSongListDOMElement (songList) {
+  for(var i=0; i < songList.songs.length; i++) {
+    var currentSong = songList.songs[i];
+    $('#songSection').append('<section><h1>' + currentSong.title + '</h1>');
+    $('#songSection').append('<div>' + currentSong.artist + '</div>');
+    $('#songSection').append('<div>' + currentSong.album + '</div>');
+    $('#songSection').append('<button class="deleteBtn">Delete</button></section>');
+  }
+}
+
+$(".deleteBtn").click(function(){
+  $(".deleteBtn").closest("section").remove();
+});
+
+
+$('#listClick').click(function() {
+  $.ajax({
+  url: 'songList.json',
+  success: populateSongListDOMElement
+});
+})

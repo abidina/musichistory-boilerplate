@@ -1,0 +1,29 @@
+{
+  "songs": [
+    {
+      "title": "When We Were Young",
+      "artist": "Adele",
+      "album": "25"
+    },    
+    {
+      "title": "Used to Love You",
+      "artist": "Gwen Stefani",
+      "album": "This is What the Truth Feels Like"
+    },    
+    {
+      "title": "Anaconda",
+      "artist": "Nicki Minaj",
+      "album": "The Pinkprint"
+    },
+    {
+      "title": "Paranoia in B Major",
+      "artist": "The Avett Brothers",
+      "album": "Emotionalism"
+    },
+    {
+      "title": "Stockholm",
+      "artist": "Jason Isbell",
+      "album": "Southeastern"
+    }
+  ]
+}
