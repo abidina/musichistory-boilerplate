@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
@@ -26,22 +26,17 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <li id="listClick"><a href="#">List Music</a></li>
         <li id="addClick"><a href="#">Add Music</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
+<div class = "container-fluid">
 <!-- ADD MUSIC VIEW -->
-<section class="inputSection" id="addMusicView">
+<section class="inputSection .col-md-6 .col-md-offset-3" id="addMusicView">
 <p>Song: <input type="text" id="userSongName" class="userInput"></input></p>
 <p>Artist: <input type="text" id="userArtistName" class="userInput"></input></p>
 <p>Album: <input type="text" id="userAlbumName" class="userInput"></input></p>
@@ -87,11 +82,12 @@
 </section>
 
 <!-- yellow box -->
-<section class="songs col-md-8" id="songSection">
-<button id="moreSongsBtn">More ></button>
-</section>
-</section>
+<section class="songs col-md-9" id="songSection"></section>
 
+
+
+</section>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

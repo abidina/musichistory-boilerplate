@@ -1,34 +1,63 @@
 $section-height: 475px;
 $standard-border: 2px solid black;
-
+$border-radius: 2%;
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  margin: 5%;
+  background-color: lightgray;
+}
+
+.navbar {
+  border: $standard-border;
+  color: #000;
+  margin: 2% 2% 0 2%;
 }
 
 li {
   cursor: pointer;
 }  
 
+.musicRow {
+  p {
+    .info {
+    font-style: italic;
+    font-weight: bolder;
+    }
+  }
+}
+
+.inputSection {
+  text-align: center;
+  background-color: #fff;
+  border: $standard-border;
+  margin: 2%;
+  border-radius: $border-radius;
+  padding: 3%;
+}
+
 .select {
-  background-color: #4DD7FA;
+  background-color: #fff;
   border:  $standard-border;
   padding: 8px 10px 8px 10px;
-  margin: auto 5px auto 3%;
+  height: $section-height;
+  margin: 2%;
+  border-radius: $border-radius;
+
   button {
     margin: 5% 25%;   
   }
 }
 
 .songs {
-  background-color: #FEFAC0;
+  background-color: #fff;
   border:  $standard-border;
   padding: 8px 0px 8px 20px;
   height: $section-height;
   overflow: auto;
-  margin: auto 3% auto 5px;
+  margin: 2%;
+  border-radius: $border-radius;
+
 
   h1 {
     color:  #785616;
@@ -48,8 +77,4 @@ li {
 
 h3 {
   font-weight: lighter;
-}
-
-.inputSection {
-  text-align: center;
 }

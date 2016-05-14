@@ -2,8 +2,14 @@
 
 var songsArray = [];
 var songString = "";
-// var songList;
 
+// AJAX FUNCTION
+var ajaxFunction = function() {
+  $.ajax({
+  url: 'https://torrid-fire-9009.firebaseio.com/songs/.json',
+  success: populateSongListDOMElement
+  });
+};
 
 // hide or show add music/list view depending on link click
 $("#addMusicView").hide();
@@ -18,52 +24,51 @@ $("#listClick").click(function() {
   $("#listMusicView").show();
 });
 
-
-// songsArray & songList.songs are different. wtf.
-// is the user input ever actually put into the initial array?
-
-$("#addMusicBtn").click(function(){
-  var userSong ='<div><h1>' + $("#userSongName").val() + '</h1></div><div><p>' + $("#userArtistName").val() + '</p></div><div><p>' + $("#userAlbumName").val() + '</p></div><button class="deleteBtn">Delete</button>';
-
-  songsArray.unshift(userSong);
-
-  for (var i = 0; i < songsArray.length; i++) {
-    let string = "";
-    string += "<p class='whatIsThisTag'>" + songsArray[i] + "</p>";
-    $('#songSection').html(string);
-  }
-});
-
-
-
+// function for populating the DOM with song list
 function populateSongListDOMElement (songs) {
+  let songString = "";
+  $('#songSection').html("");
   for (let song in songs) {
     let currentSong = songs[song];
-    console.log(currentSong);
-    $('#songSection').append('<div class="musicRow"><h1>' + currentSong.title + '</h1><p>' + currentSong.artist + '</p><p>' + currentSong.album + '</p><button class="deleteBtn">Delete</button></div>');
+    songString += '<div class="musicRow"><h1>' + currentSong.title + '</h1><p><span class=info>' + currentSong.artist + '</span> on the album <span class=info>' + currentSong.album + '</span></p><button class="deleteBtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></div>';
   }
+    $('#songSection').append(songString);
 }
 
-
-
-// trying to make delete btn work
+// delete btn
 $(document).on("click", "button[class='deleteBtn']", function() {
-  console.log("delete one");
-  $(this).parent().remove();  
+    $(this).parent().remove();  
 });
 
 
-// ajax request
+// ajax request for list music
 $('#listClick').click(function() {
-  $.ajax({
-  url: 'https://torrid-fire-9009.firebaseio.com/songs/.json',
-  success: populateSongListDOMElement
-});
+  ajaxFunction();
 });
 
-$('#moreSongsBtn').click(function() {
+
+// user data added on add music button click
+$('#addMusicBtn').click(function() {
+
+  var newSong = {
+    "title": $("#userSongName").val(),
+    "album": $("#userAlbumName").val(),
+    "artist": $("#userArtistName").val()
+  };
+
   $.ajax({
-  url: 'songList2.json',
-  success: populateSongListDOMElement
+    url: 'https://torrid-fire-9009.firebaseio.com/songs/.json',
+    type: 'POST',
+    data: JSON.stringify(newSong)
+  }).done(function() {
+    console.log("it saved");
+    ajaxFunction();
+  $("#addMusicView").hide();
+  $("#listMusicView").show();
+  });
 });
-});
+
+
+ajaxFunction();
+
+
