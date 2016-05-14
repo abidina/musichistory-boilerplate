@@ -48,23 +48,10 @@ function populateSongListDOMElement (songs) {
 
 // trying to make delete btn work
 $(document).on("click", "button[class='deleteBtn']", function() {
-  $(this).$('.musicRow').remove();  
+  console.log("delete one");
+  $(this).parent().remove();  
 });
 
-// this was taken from Chatty & modified, but definitely seems too convoluted 
-// var deleteFunc = function() {
-//     var dltBtn = document.getElementsByClassName('.deletebtn')
-//     for (var i = 0; i < $('.deletebtn').length; i++) {
-//       $('.deletebtn').on("click", function () {
-//       let deleteIndex = this.split("songs")[1];
-//       let chats = Chatty.getChats();
-//       songList.splice(deleteIndex, 1);
-//       populateSongListDOMElement();
-//       });
-//     }
-//   };
-
-  // $('.deletebtn').click(deleteFunc());
 
 // ajax request
 $('#listClick').click(function() {

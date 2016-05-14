@@ -1,21 +1,36 @@
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 5%; }
+
+li {
+  cursor: pointer; }
 
 .select {
   background-color: #4DD7FA;
-  border: 2px solid black; }
+  border: 2px solid black;
+  padding: 8px 10px 8px 10px;
+  margin: auto 5px auto 3%; }
+  .select button {
+    margin: 5% 25%; }
 
 .songs {
   background-color: #FEFAC0;
   border: 2px solid black;
+  padding: 8px 0px 8px 20px;
   height: 475px;
-  overflow: auto; }
+  overflow: auto;
+  margin: auto 3% auto 5px; }
   .songs h1 {
     color: #785616;
     font-size: 26px;
     font-weight: lighter; }
   .songs p {
     font-size: 1.25em; }
+
+.genre p {
+  display: inline-block;
+  margin: auto 8px; }
 
 h3 {
   font-weight: lighter; }

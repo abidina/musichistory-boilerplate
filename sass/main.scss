@@ -4,45 +4,31 @@ $standard-border: 2px solid black;
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  // font-size: 14px;
-  // margin: 5%;
+  font-size: 14px;
+  margin: 5%;
 }
 
-// .nav {
-//   background-color: #FFB4B0;
-//   height: 30px;
-//   color: #000;
-  // border: $standard-border;
-  // padding: 10px 10px 10px 20px;
-
-  // li {
-  //   float: left;
-  //   list-style-type: none;
-  //   margin: 5px 0 0 0;
-  //   padding: 0 3px 0 3px;
-  //   cursor: pointer;
-  //   }   
-//}
-
-// .border {
-//   border-left: $standard-border;
-// }
+li {
+  cursor: pointer;
+}  
 
 .select {
   background-color: #4DD7FA;
   border:  $standard-border;
-  // padding: 8px 10px 8px 10px;
-  // button {
-  //   margin: 5% 25%;   
-  // }
+  padding: 8px 10px 8px 10px;
+  margin: auto 5px auto 3%;
+  button {
+    margin: 5% 25%;   
+  }
 }
 
 .songs {
   background-color: #FEFAC0;
   border:  $standard-border;
-  // padding: 8px 0px 8px 20px;
+  padding: 8px 0px 8px 20px;
   height: $section-height;
   overflow: auto;
+  margin: auto 3% auto 5px;
 
   h1 {
     color:  #785616;
@@ -55,10 +41,10 @@ body {
   }
 }
 
-// .genre p {
-//   display: inline-block;
-//   margin: auto 8px;
-// }
+.genre p {
+  display: inline-block;
+  margin: auto 8px;
+}
 
 h3 {
   font-weight: lighter;
