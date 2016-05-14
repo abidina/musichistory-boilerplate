@@ -1,0 +1,58 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 5%; }
+
+.nav {
+  background-color: #FFB4B0;
+  height: 30px;
+  color: #000;
+  border: 2px solid black;
+  padding: 10px 10px 10px 20px; }
+  .nav li {
+    float: left;
+    list-style-type: none;
+    margin: 5px 0 0 0;
+    padding: 0 3px 0 3px;
+    cursor: pointer; }
+
+.border {
+  border-left: 2px solid black; }
+
+.select {
+  background-color: #4DD7FA;
+  border: 2px solid black;
+  padding: 8px 10px 8px 10px;
+  width: 15%;
+  float: left;
+  height: 475px; }
+
+.songs {
+  background-color: #FEFAC0;
+  border: 2px solid black;
+  padding: 8px 0px 8px 20px;
+  width: 80%;
+  float: right;
+  height: 475px;
+  overflow: auto; }
+
+.songs h1 {
+  color: #785616;
+  font-size: 26px;
+  font-weight: lighter; }
+
+.songs p {
+  font-size: 1.25em; }
+
+.select button {
+  margin: 5% 25%; }
+
+.genre p {
+  display: inline-block;
+  margin: auto 8px; }
+
+h3 {
+  font-weight: lighter; }
+
+.inputSection {
+  text-align: center; }

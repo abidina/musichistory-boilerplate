@@ -1,3 +1,6 @@
+$section-height: 475px;
+$standard-border: 2px solid black;
+
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -9,44 +12,49 @@ body {
   background-color: #FFB4B0;
   height: 30px;
   color: #000;
-  border: 2px solid black;
+  border: $standard-border;
   padding: 10px 10px 10px 20px;
-}
 
-.nav > li {
-  float: left;
-  list-style-type: none;
-  margin: 5px 0 0 0;
-  padding: 0 3px 0 3px;
-  cursor: pointer;
+  li {
+    float: left;
+    list-style-type: none;
+    margin: 5px 0 0 0;
+    padding: 0 3px 0 3px;
+    cursor: pointer;
+    }   
 }
 
 .border {
-  border-left: 2px solid black;
+  border-left: $standard-border;
 }
 
 .select {
   background-color: #4DD7FA;
-  border:  2px solid black;
+  border:  $standard-border;
   padding: 8px 10px 8px 10px;
   width: 15%;
   float: left;
-  height: 475px;
+  height: $section-height;
 }
 
 .songs {
   background-color: #FEFAC0;
-  border:  2px solid black;
+  border:  $standard-border;
   padding: 8px 0px 8px 20px;
   width: 80%;
   float: right;
-  height: 475px;
+  height: $section-height;
+  overflow: auto;
 }
 
 .songs h1 {
   color:  #785616;
   font-size: 26px;
   font-weight: lighter;
+}
+
+.songs p {
+  font-size: 1.25em;
 }
 
 .select button {

@@ -1,28 +1,13 @@
 "use strict";
 
-var songs = [];
-var songElement = document.getElementById('songSection');
+var songsArray = [];
 var songString = "";
-var songList;
+// var songList;
 
-// songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-// songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-// songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-// songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-// songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
 
-// songs.unshift("Please Pardon Yourself = by The Avett Brothers on the album Mignonette");
-// songs.push("Agape = by Bear's Den on the album Agape");
-
-// var newSongs = [];
-//     songs = songs.toString().replace(/>/g, "=");
-//     songs = songs.replace("@", "");
-//     songs = songs.replace("(", "");
-//     songs = songs.replace("*", "");
-//     songs = songs.replace("*e", "e");
-//     songs = songs.replace("!", "").split(',');
-
+// hide or show add music/list view depending on link click
 $("#addMusicView").hide();
+
 $("#addClick").click(function() {
   $("#listMusicView").hide();
   $("#addMusicView").show();
@@ -33,57 +18,71 @@ $("#listClick").click(function() {
   $("#listMusicView").show();
 });
 
+
+// songsArray & songList.songs are different. wtf.
+// is the user input ever actually put into the initial array?
+
 $("#addMusicBtn").click(function(){
-  var userSong = $("#userSongName").val() + " on the album " + $("#userAlbumName").val() + " by " + $("#userArtistName").val();
-  songs.unshift(userSong);
-  for (var i = 0; i < songs.length; i++) {
-    var string = "";
-    var string = "<p>" + songs[i] + "</p>";
-    songElement.innerHTML += string;
+  var userSong ='<div><h1>' + $("#userSongName").val() + '</h1></div><div><p>' + $("#userArtistName").val() + '</p></div><div><p>' + $("#userAlbumName").val() + '</p></div><button class="deleteBtn">Delete</button>';
+
+  songsArray.unshift(userSong);
+
+  for (var i = 0; i < songsArray.length; i++) {
+    let string = "";
+    string += "<p class='whatIsThisTag'>" + songsArray[i] + "</p>";
+    $('#songSection').html(string);
   }
 });
 
 
-function populateSongListDOMElement (songList, i) {
-  var currentSong = songList.songs[i];
+
+function populateSongListDOMElement (songList) {
   for(var i=0; i < songList.songs.length; i++) {
-    let string = "";
-    if (i === 0) {
-      string += '<div class="domSong">';
-    }
-    string += '<section><h1>' + currentSong.title + '</h1>';
-    string += '<div>' + currentSong.artist + '</div>';
-    string += '<div>' + currentSong.album + '</div>';
-    string += '<button class="deleteBtn">Delete</button></section>';
-    if (i === songList.songs.length) {
-      string += '</div>';
-    }
-    return string;
+    var currentSong = songList.songs[i];
+    songsArray.push(currentSong);
+    console.log(songsArray);
+    // this won't work bc 'section' isn't closed in the same line that it's opened
+      $('#songSection').append('<div><h1>' + currentSong.title + '</h1></div>');
+      $('#songSection').append('<div><p>' + currentSong.artist + '</p></div>');
+      $('#songSection').append('<div><p>' + currentSong.album + '</p></div>');
+      $('#songSection').append('<button class="deleteBtn">Delete</button>');
+
   }
-  songString += populateSongListDOMElement(songList, i);
 }
 
-// for(var i=0; i < songList.songs.length; i++) {
-//   var currentSong = songList.songs[i];
-//     //this won't work because you can't append an unclosed tag to the DOM
-//     $('#songSection').append('<div class="domSong">');
-//     $('#songSection').append('<section><h1>' + currentSong.title + '</h1>');
-//     $('#songSection').append('<div>' + currentSong.artist + '</div>');
-//     $('#songSection').append('<div>' + currentSong.album + '</div>');
-//     $('#songSection').append('<button class="deleteBtn">Delete</button></section></div>');
-//   }
 
-// $(".deleteBtn").click(function(){
-//   $(this).closest("section").remove();
-// });
 
+// trying to make delete btn work
 $(document).on("click", "button[class='deleteBtn']", function() {
-  $(this).closest('div[class="domSong"]').remove();  
+  $(this).closest('p').remove();  
 });
 
+// this was taken from Chatty & modified, but definitely seems too convoluted 
+// var deleteFunc = function() {
+//     var dltBtn = document.getElementsByClassName('.deletebtn')
+//     for (var i = 0; i < $('.deletebtn').length; i++) {
+//       $('.deletebtn').on("click", function () {
+//       let deleteIndex = this.split("songs")[1];
+//       let chats = Chatty.getChats();
+//       songList.splice(deleteIndex, 1);
+//       populateSongListDOMElement();
+//       });
+//     }
+//   };
+
+  // $('.deletebtn').click(deleteFunc());
+
+// ajax request
 $('#listClick').click(function() {
   $.ajax({
   url: 'songList.json',
+  success: populateSongListDOMElement
+});
+});
+
+$('#moreSongsBtn').click(function() {
+  $.ajax({
+  url: 'songList2.json',
   success: populateSongListDOMElement
 });
 });
