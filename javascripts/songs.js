@@ -36,17 +36,11 @@ $("#addMusicBtn").click(function(){
 
 
 
-function populateSongListDOMElement (songList) {
-  for(var i=0; i < songList.songs.length; i++) {
-    var currentSong = songList.songs[i];
-    songsArray.push(currentSong);
-    console.log(songsArray);
-    // this won't work bc 'section' isn't closed in the same line that it's opened
-      $('#songSection').append('<div><h1>' + currentSong.title + '</h1></div>');
-      $('#songSection').append('<div><p>' + currentSong.artist + '</p></div>');
-      $('#songSection').append('<div><p>' + currentSong.album + '</p></div>');
-      $('#songSection').append('<button class="deleteBtn">Delete</button>');
-
+function populateSongListDOMElement (songs) {
+  for (let song in songs) {
+    let currentSong = songs[song];
+    console.log(currentSong);
+    $('#songSection').append('<div class="musicRow"><h1>' + currentSong.title + '</h1><p>' + currentSong.artist + '</p><p>' + currentSong.album + '</p><button class="deleteBtn">Delete</button></div>');
   }
 }
 
@@ -54,7 +48,7 @@ function populateSongListDOMElement (songList) {
 
 // trying to make delete btn work
 $(document).on("click", "button[class='deleteBtn']", function() {
-  $(this).closest('p').remove();  
+  $(this).$('.musicRow').remove();  
 });
 
 // this was taken from Chatty & modified, but definitely seems too convoluted 
@@ -75,7 +69,7 @@ $(document).on("click", "button[class='deleteBtn']", function() {
 // ajax request
 $('#listClick').click(function() {
   $.ajax({
-  url: 'songList.json',
+  url: 'https://torrid-fire-9009.firebaseio.com/songs/.json',
   success: populateSongListDOMElement
 });
 });

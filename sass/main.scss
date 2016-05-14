@@ -4,67 +4,61 @@ $standard-border: 2px solid black;
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  margin: 5%;
+  // font-size: 14px;
+  // margin: 5%;
 }
 
-.nav {
-  background-color: #FFB4B0;
-  height: 30px;
-  color: #000;
-  border: $standard-border;
-  padding: 10px 10px 10px 20px;
+// .nav {
+//   background-color: #FFB4B0;
+//   height: 30px;
+//   color: #000;
+  // border: $standard-border;
+  // padding: 10px 10px 10px 20px;
 
-  li {
-    float: left;
-    list-style-type: none;
-    margin: 5px 0 0 0;
-    padding: 0 3px 0 3px;
-    cursor: pointer;
-    }   
-}
+  // li {
+  //   float: left;
+  //   list-style-type: none;
+  //   margin: 5px 0 0 0;
+  //   padding: 0 3px 0 3px;
+  //   cursor: pointer;
+  //   }   
+//}
 
-.border {
-  border-left: $standard-border;
-}
+// .border {
+//   border-left: $standard-border;
+// }
 
 .select {
   background-color: #4DD7FA;
   border:  $standard-border;
-  padding: 8px 10px 8px 10px;
-  width: 15%;
-  float: left;
-  height: $section-height;
+  // padding: 8px 10px 8px 10px;
+  // button {
+  //   margin: 5% 25%;   
+  // }
 }
 
 .songs {
   background-color: #FEFAC0;
   border:  $standard-border;
-  padding: 8px 0px 8px 20px;
-  width: 80%;
-  float: right;
+  // padding: 8px 0px 8px 20px;
   height: $section-height;
   overflow: auto;
+
+  h1 {
+    color:  #785616;
+    font-size: 26px;
+    font-weight: lighter;  
+  }
+
+  p {
+    font-size: 1.25em;  
+  }
 }
 
-.songs h1 {
-  color:  #785616;
-  font-size: 26px;
-  font-weight: lighter;
-}
-
-.songs p {
-  font-size: 1.25em;
-}
-
-.select button {
-  margin: 5% 25%;
-}
-
-.genre p {
-  display: inline-block;
-  margin: auto 8px;
-}
+// .genre p {
+//   display: inline-block;
+//   margin: auto 8px;
+// }
 
 h3 {
   font-weight: lighter;
