@@ -4,7 +4,7 @@ body {
   background-color: lightgray; }
 
 .navbar {
-  border: 2px solid black;
+  border: 1px solid black;
   color: #000;
   margin: 2% 2% 0 2%; }
 
@@ -18,29 +18,29 @@ li {
 .inputSection {
   text-align: center;
   background-color: #fff;
-  border: 2px solid black;
+  border: 1px solid black;
   margin: 2%;
-  border-radius: 2%;
+  border-radius: 10px;
   padding: 3%; }
 
 .select {
   background-color: #fff;
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 8px 10px 8px 10px;
   height: 475px;
   margin: 2%;
-  border-radius: 2%; }
+  border-radius: 10px; }
   .select button {
     margin: 5% 25%; }
 
 .songs {
   background-color: #fff;
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 8px 0px 8px 20px;
   height: 475px;
   overflow: auto;
   margin: 2%;
-  border-radius: 2%; }
+  border-radius: 10px; }
   .songs h1 {
     color: #785616;
     font-size: 26px;
